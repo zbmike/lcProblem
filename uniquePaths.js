@@ -6,7 +6,9 @@ var uniquePaths = function (m, n) {
   if (m === 1 || n === 1) {
     return 1;
   }
-  let memo = new Array(n).fill(0).map(() => new Array(2).fill(-1));
+  let memo = Array.from({ length: 2 }, () => new Array(m).fill(-1));
+
+  console.log(memo);
 
   let flag = 1;
   for (let row = 0; row < n; row++) {
@@ -25,4 +27,4 @@ var uniquePaths = function (m, n) {
 };
 
 console.log(uniquePaths(3, 2));
-console.log(uniquePaths(7, 3));
+console.log(uniquePaths(7, 4));
